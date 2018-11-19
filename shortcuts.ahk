@@ -1,50 +1,68 @@
 ; MEDIA CONTROLS
 
-;I made these for 1-hand music control so I wouldn't have to press "fn," may or may not be useful
-^]:: Media_Play_Pause
-^=:: Media_Next
-^-:: Media_Prev
+#InstallKeybdHook
+^]:: Media_Next
+^=:: Media_Play_Pause
+^[:: Media_Prev
 ^F11:: Volume_Down
 ^F12:: Volume_Up
 ^F10:: Volume_Mute
 
-; WEB SHORTCUTS
+; Keyboard Shortcuts
 
-;alt+space opens gcal
 !Space:: run https://calendar.google.com/calendar/r?pli=1#main_7 return
+#Space:: run  https://en.todoist.com/app?lang=en#project%2F2168138707%2Ffull 
+RAlt & Space:: run C:\Program Files (x86)\Hourglass\Hourglass.exe, WinActivate, ahk_class AGENT_DESKTOP
+F10:: KeyHistory
+LAlt & RAlt:: run C:\Program Files (x86)\Hourglass\Hourglass.exe, WinActivate, ahk_class AGENT_DESKTOP
+LAlt:: LAlt
+RAlt:: RAlt
 
-;win+space opens gmail
-#Space:: run https://mail.google.com/mail/u/0/#inbox
+;Paused := false
+#p::suspend,
+	if A_IsSuspended = 1
+		MsgBox,, AHK, Suspended, 1
+	else
+		MsgBox,, AHK, HotKeys Resumed, 1
+		
 
-; MOUSE SHORTCUTS
+; MOUSE MAPS
 
-;hold right mouse button and scroll between tabs
 RButton & WheelUp:: send ^+{Tab}
 RButton & WheelDown:: send ^{Tab}
-
-;open toggl, todoist
 RButton & LButton:: send ^+x
+RButton & XButton1:: run C:\Program Files (x86)\Hourglass\Hourglass.exe
 RButton & XButton2:: run https://en.todoist.com/app?lang=en#start
-
-;you'll need to put in your own path here, or delete this if you don't use a timer program
-RButton & XButton1:: run D:\Program Files (x86)\Orzeszek\Orzeszek Timer.exe
+XButton1 & LButton:: send {F11}
 RButton:: RButton
+LButton:: LButton
 
-;clicking both thumb buttons in an order can close a tab or reopen recently closed ones
 XButton1 & XButton2:: send ^w
 XButton2 & XButton1:: send ^+t
+
+;MButton & RButton & WheelUp:: send w
+;MButton & RButton & WheelDown:: send s
+
+; AUDIO CONTROLS
+MButton & LButton:: Send ^{Left}
+MButton & RButton:: Send ^{Right}
+XButton2 & LButton:: Send {Media_Play_Pause}
+
+
+
 XButton1:: XButton1
 XButton2:: XButton2
 
-;scroll between windows by holding a thumb button
-XButton1 & WheelUp:: ShiftAltTab 
-XButton1 & WheelDown::  AltTab
+XButton1 & WheelUp:: send ^{WheelUp}
+XButton1 & WheelDown:: send ^{WheelDown}
+MButton & WheelUp:: ShiftAltTab
+MButton & WheelDown:: AltTab 
 MButton:: MButton
-
-;scroll volume using other button
 XButton2 & WheelUp:: send {Volume_Up}
 XButton2 & WheelDown:: send {Volume_Down}
 
-; KEYBOARD TEXT SHORTCUTS (good for long emails)
+; KEYBOARD TEXT SHORTCUTS	
 
-:c*:js@::johnsmithsreallylongemail@mail.net
+:c*:azg@::adamziccardi4@gmail.com
+:c*:a22@::apz22@cornell.edu
+Space:: Space
