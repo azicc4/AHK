@@ -1,3 +1,11 @@
+; CONTENTS
+; 1 - MEDIA CONTROLS
+; 2 - KEYBOARD SHORTCUTS
+; 3 - PAUSE SCRIPT
+; 4 - CUSTOM MOUSE MAPS
+; 5 - KEYBOARD TEXT SHORTCUTS
+
+
 ; MEDIA CONTROLS
 
 #InstallKeybdHook
@@ -8,7 +16,7 @@
 ^F12:: Volume_Up
 ^F10:: Volume_Mute
 
-; Keyboard Shortcuts
+; KEYBOARD SHORTCUTS
 
 !Space:: run https://calendar.google.com/calendar/r?pli=1#main_7 return
 #Space:: run  https://en.todoist.com/app?lang=en#project%2F2168138707%2Ffull 
@@ -18,14 +26,13 @@ LAlt & RAlt:: run C:\Program Files (x86)\Hourglass\Hourglass.exe, WinActivate, a
 LAlt:: LAlt
 RAlt:: RAlt
 
-;Paused := false
+; PAUSE SCRIPT
 #p::suspend,
 	if A_IsSuspended = 1
 		MsgBox,, AHK, Suspended, 1
 	else
 		MsgBox,, AHK, HotKeys Resumed, 1
 		
-
 ; MOUSE MAPS
 
 RButton & WheelUp:: send ^+{Tab}
@@ -43,12 +50,10 @@ XButton2 & XButton1:: send ^+t
 ;MButton & RButton & WheelUp:: send w
 ;MButton & RButton & WheelDown:: send s
 
-; AUDIO CONTROLS
+; (AUDIO CONTROLS)
 MButton & LButton:: Send ^{Left}
 MButton & RButton:: Send ^{Right}
 XButton2 & LButton:: Send {Media_Play_Pause}
-
-
 
 XButton1:: XButton1
 XButton2:: XButton2
