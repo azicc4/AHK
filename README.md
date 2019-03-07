@@ -3,7 +3,7 @@ The AHK file is my personal mouse and keyboard commands.
 The .epf is the eclipse preferenes required for my programming class.
 
 To get the download links:
-Go in Versions.
+Go in Releases.
 Find the files you want.
 Click and drag the links into your bookmarks bar.
 Then, when you click the bookmarks, it will send you right to the downlaod, without even having to login to github.
