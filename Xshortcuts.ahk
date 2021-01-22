@@ -13,6 +13,7 @@ F10:: Volume_Mute
 ; Keyboard Shortcuts
 
 ; CAPSLOCK BRINGS HOURGLASS TO THE FRONT
+; REQUIRES WINDOW TO BE CALLED HOURGLASS
 
 Capslock::
 IfWinExist, Hourglass
@@ -21,7 +22,7 @@ IfWinExist, Hourglass
     Else
         WinActivate, Hourglass,,2
 IfWinNotExist, Hourglass
-    run C:\Program Files (x86)\Hourglass\Hourglass.exe
+    run D:\Program Files (x86)\Hourglass\Hourglass.exe
 return
 
 RButton & LButton::
@@ -31,16 +32,17 @@ IfWinExist, Hourglass
     Else
         WinActivate, Hourglass,,2
 IfWinNotExist, Hourglass
-    run C:\Program Files (x86)\Hourglass\Hourglass.exe
+    run D:\Program Files (x86)\Hourglass\Hourglass.exe
 return
 
-+Capslock:: run C:\Program Files (x86)\Hourglass\Hourglass.exe, WinActivate
++Capslock:: run D:\Program Files (x86)\Hourglass\Hourglass.exe, WinActivate
 
-!Space:: run https://calendar.google.com/calendar/r?pli=1#main_7 return
+;  !Space:: run https://calendar.google.com/calendar/r?pli=1#main_7 return
+
 #Space:: run  https://en.todoist.com/app?lang=en#project%2F2168138707%2Ffull 
-RAlt & Space:: run C:\Program Files (x86)\Hourglass\Hourglass.exe
+RAlt & Space:: run D:\Program Files (x86)\Hourglass\Hourglass.exe
 F10:: KeyHistory
-LAlt & RAlt:: run C:\Program Files (x86)\Hourglass\Hourglass.exe
+LAlt & RAlt:: run D:\Program Files (x86)\Hourglass\Hourglass.exe
 LAlt:: LAlt
 RAlt:: RAlt
 
@@ -54,8 +56,8 @@ RAlt:: RAlt
 
 ; MUSIC CODES
 
-^1:: run https://www.youtube.com/watch?v=QJNIlupMX9c
-^2:: run https://www.youtube.com/user/cafemusicbgmchannel
+^1:: run https://www.youtube.com/watch?v=ZyJwfxqpUXA
+^2:: run https://www.youtube.com/watch?v=pNIFSUTwk2g
 ;^3::
 ;^4::
 
@@ -69,14 +71,28 @@ RAlt:: RAlt
 
 ; MOUSE MAPS
 
+;SIDE SCROLLING VIA WHEEL
+;RButton & WheelUp:: send +{WheelUp}
+;RButton & WheelDown:: send +{WheelDown}
+
+;FOR TAB SWITCHING VIA MIDDLE BUTTON
+;MButton & WheelUp:: send ^+{Tab}
+;MButton & WheelDown:: send ^{Tab}
+
+;TABS VIA RBUTTON
 RButton & WheelUp:: send ^+{Tab}
 RButton & WheelDown:: send ^{Tab}
+
+;FOR SWAPPING WINDOWS VIA MBUTTON
+MButton & WheelUp:: ShiftAltTab
+MButton & WheelDown:: AltTab
+
 ; RButton & LButton:: send ^+x
 RButton & XButton1:: run C:\Program Files (x86)\Hourglass\Hourglass.exe
 RButton & XButton2:: run https://en.todoist.com/app?lang=en#start
 XButton1 & LButton:: send {F11}
+
 RButton:: RButton
-LButton:: LButton
 
 XButton1 & XButton2:: send ^w
 XButton2 & XButton1:: send ^+t
@@ -94,8 +110,7 @@ XButton2:: XButton2
 
 XButton1 & WheelUp:: send ^{WheelUp}
 XButton1 & WheelDown:: send ^{WheelDown}
-MButton & WheelUp:: ShiftAltTab
-MButton & WheelDown:: AltTab 
+
 MButton:: MButton
 XButton2 & WheelUp:: send {Volume_Up}
 XButton2 & WheelDown:: send {Volume_Down}
@@ -106,3 +121,39 @@ XButton2 & WheelDown:: send {Volume_Down}
 :c*:a22@::apz22@cornell.edu
 Space:: Space
 
+
+; OBNOXIOUS TEXT COPYPASTAS
+^Numpad1::
+send,
+(
+I saw an ol’ gnome
+Take a gknock at a gnat
+Who was gnibbling the gnose of his gnu.
+I said, “Gnasty gnome,
+Gnow, stop doing that.
+That gnat aint done gnothing to you.”
+He gnodded his gnarled ol’ head and said,
+“’Til gnow I gnever gnew
+That gknocking a gnat
+In the gnoodle like that
+Was gnot a gnice thing to do
+)
+return
+return
+
+^Numpad2::
+send,
+(
+UNROLL THE TADPOLE 
+UNCLOG THE FROG 
+UNLOAD THE TOAD 
+UNINHIBIT THE RIBBIT 
+UNSTICK THE LICK 
+UNIMPRISON THE AMPHIBIAN 
+UNMUTE THE NEWT 
+UNBENCH THE KENCH 
+PERMIT THE KERMIT 
+DEFOG THE POLLIWOG
+)
+return
+return
